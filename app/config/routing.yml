@@ -1,0 +1,25 @@
+
+
+auth_:
+    resource: '@AuthBundle/Controller/'
+    type: annotation
+    prefix:   /
+
+auth:
+    resource: "@AuthBundle/Resources/config/routing.yml"
+
+web:
+    resource: "@WebBundle/Resources/config/routing.yml"
+
+web_:
+    resource: '@WebBundle/Controller/'
+    type: annotation
+    prefix:   /web
+
+# app:
+#     resource: "@AppBundle/Controller"
+#     prefix:   /s
+
+# app_:
+#     resource: '@AppBundle/Controller/'
+#     type: annotation

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<database name="test" defaultIdMethod="native" identifierQuoting='true' namespace="AuthBundle\Model">
+    <!--==== SETTING ====-->
+    <!--http://propelorm.org/documentation/behaviors/validate.html-->
+       <vendor type="mysql">
+        <parameter name="Engine" value="InnoDB"/>
+        <parameter name="Charset" value="utf8"/>
+        <parameter name="Collate" value="utf8_unicode_ci"/>
+    </vendor>
+
+    <table name="user">
+        <column name="makh" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="name" type="varchar" size="30"/>
+        <column name="account" type="varchar" size="30"/>
+        <column name="password" type="varchar" size="30"/>
+        <column name="email" type="varchar" size="30"/>
+        <column name="dateregister" type="date" />
+        <column name="birthday" type="date"/>
+        <column name="gender" type="varchar" size="100"/>
+        <column name="address" type="varchar" size="500"/>
+        <column name="describe" type="varchar"  size="1000"/>
+        <column name="state" type="tinyint" />
+        <column name="delete" type="tinyint" />
+        <column name="phonenumber" type="varchar"  size="30"/>
+        <column name="avatar" type="varchar"  size="100"/>
+        <column name="code" type="varchar"  size="1000"/>
+    </table>
+    <table name="admin">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="account" type="varchar" size="30"/>
+        <column name="password" type="varchar" size="30"/>
+    </table>
+     <table name="items">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="item_name" type="varchar" size="300"/>
+    </table>
+    <table name="posts">
+        <column name="id" type="integer" required="true" primaryKey="true" autoIncrement="true" />
+        <column name="itemid" type="integer"/>
+        <column name="title" type="varchar" size="500"/>
+        <column name="content" type="varchar" size="30000"/>
+        <column name="describe" type="varchar" size="1000"/>
+        <column name="image" type="varchar" size="200"/>
+        <column name="date_create" type="timestamp"/>
+        <column name="delete" type="tinyint" />
+        <foreign-key foreignTable="items">
+            <reference local="itemid" foreign="id" onDelete="cascade" onUpdate="cascade"/>
+        </foreign-key>
+    </table>
+   
+</database>

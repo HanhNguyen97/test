@@ -1,0 +1,21 @@
+{
+  "name": "test",
+  "authors": [
+    "nt_Hanh <hanhcnttk39b@gmail.com>"
+  ],
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "admin-lte": "2.4.18"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
